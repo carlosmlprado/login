@@ -1,0 +1,17 @@
+# ZeroGap, Campinas-SP
+# Estrutura de arquivos e/ou diretórios que não devem ser adicionados no git.
+
+.factorypath
+*.log
+.idea/*
+*.iml
+.settings/
+logs/
+target/
+.project
+.classpath
+dependency-reduced-pom.xml
+.springBeans
+.DS_Store
+get-pip.py
+.vscode/*
