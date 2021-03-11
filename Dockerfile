@@ -1,4 +1,5 @@
 FROM openjdk:8
+MAINTAINER Carlos Prado
 
 WORKDIR /app
 

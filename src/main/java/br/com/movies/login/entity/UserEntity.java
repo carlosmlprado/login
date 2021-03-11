@@ -7,13 +7,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import br.com.movies.login.dto.UsuarioDTO;
+import br.com.movies.login.dto.UserDTO;
 import lombok.Data;
 
 @Entity
 @Data
 @Table(name = "usuario")
-public class UsuarioEntity {
+public class UserEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,17 +21,17 @@ public class UsuarioEntity {
 	public Integer id;
 
 	@Column(name = "name")
-	private String nome;
+	private String name;
 
 	@Column(name = "cpf")
 	private String cpf;
 
-	public UsuarioEntity builder(UsuarioDTO usuario) {
+	public static UserEntity builder(UserDTO usuario) {
+		UserEntity user = new UserEntity();
+		user.setCpf(usuario.getCpf());
+		user.setName(usuario.getName());
 
-		this.setCpf(usuario.getCpf());
-		this.setNome(usuario.getName());
-
-		return this;
+		return user;
 	}
 
 }
